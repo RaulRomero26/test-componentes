@@ -3,7 +3,7 @@ import React from 'react'
 import { Table } from './Table';
 
 import "babel-polyfill";
-import { GlobalFilter, DefaultColumnFilter, SelectColumnFilter, SliderColumnFilter, NumberRangeColumnFilter, fuzzyTextFilterFn } from './helpers/filters'
+import { GlobalFilter, DefaultColumnFilter, SelectColumnFilter, SliderColumnFilter, NumberRangeColumnFilter, fuzzyTextFilterFn,DateRangeColumnFilter, dateBetweenFilterFn } from './helpers/filters'
 
     // Define a custom filter filter function!
   function filterGreaterThan(rows, id, filterValue) {
@@ -28,7 +28,12 @@ export const TableConstructor = ({lugar, datos}) => {
       case 'datospersonales':
         columns = React.useMemo(
           () => [
-  
+                {
+                  Header:'Fecha',
+                  accessor:'Fecha_Hora',
+                  Filter: DateRangeColumnFilter,
+                  filter: dateBetweenFilterFn
+                },
                 {
                   Header:'Ficha',
                   accessor:'Ficha',

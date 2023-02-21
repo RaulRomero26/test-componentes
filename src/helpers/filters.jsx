@@ -184,3 +184,98 @@ export function fuzzyTextFilterFn(rows, id, filterValue) {
   
   // Let the table remove the filter if the string is empty
   fuzzyTextFilterFn.autoRemove = val => !val
+
+  export function dateBetweenFilterFn(rows, id, filterValues) {
+    
+    const sd = filterValues[0] ? new Date(filterValues[0]) : undefined;
+    const ed = filterValues[1] ? new Date(filterValues[1]) : undefined;
+    sd.setHours(sd.getHours() + 6)
+    //(ed != undefined) ? ed.setHours(ed.getHours() + 5) : undefined;
+    //ed.setHours(ed.getHours() + 5)
+    console.log('PREVIOS ed: ',ed, 'sd: ',sd)
+
+    if (ed || sd) {
+
+      return rows.filter((r) => {
+        // format data
+        var dateAndHour = r.values[id].split(" ");
+        //console.log('dateadnhour',dateAndHour)
+        var [year, month, day] = dateAndHour[0].split("-");
+        var date = [year, month, day].join("-");
+        var hour = dateAndHour[1];
+        var formattedData = date + " " + hour;
+  
+        const cellDate = new Date(formattedData);
+        //console.log('dateadnhour',dateAndHour, 'cellDate', cellDate)
+
+        //console.log('ed: ',ed, 'sd: ',sd)
+  
+        if (ed && sd) {
+          //sd.setHours(sd.getHours() + 6)
+          //ed.setHours(ed.getHours() + 6)
+          return cellDate >= sd && cellDate <= ed;
+        } else if (sd) {
+          //sd.setHours(sd.getHours() + 6)
+          return cellDate >= sd;
+        } else {
+          //e//d.setHours(ed.getHours() + 6)
+          return cellDate <= ed;
+        }
+      });
+    } else {
+      return rows;
+    }
+  }
+  
+  export function DateRangeColumnFilter({
+    column: { filterValue = [], preFilteredRows, setFilter, id }
+  }) {
+    const [min, max] = React.useMemo(() => {
+      let min = preFilteredRows.length
+        ? new Date(preFilteredRows[0].values[id])
+        : new Date(0);
+      let max = preFilteredRows.length
+        ? new Date(preFilteredRows[0].values[id])
+        : new Date(0);
+  
+      preFilteredRows.forEach((row) => {
+        const rowDate = new Date(row.values[id]);
+  
+        min = rowDate <= min ? rowDate : min;
+        max = rowDate >= max ? rowDate : max;
+      });
+  
+      return [min, max];
+    }, [id, preFilteredRows]);
+  
+    return (
+      <div>
+        <input
+          min={min.toISOString().slice(0, 10)}
+          onChange={(e) => {
+            const val = e.target.value;
+            setFilter((old = []) => [
+              val ? val.concat("") : undefined, 
+              old[1]
+            ]);
+          }}
+          type="date"
+          value={filterValue[0] || ""}
+        />
+        {" to "}
+        <input
+          max={max.toISOString().slice(0, 10)}
+          onChange={(e) => {
+            const val = e.target.value;
+            setFilter((old = []) => [
+              old[0],
+              val ? val.concat(" 23:59") : undefined //"T23:59:59.999Z"
+            ]);
+          }}
+          type="date"
+          value={filterValue[1]?.slice(0, 10) || ""}
+        />
+      </div>
+    );
+  }
+  
