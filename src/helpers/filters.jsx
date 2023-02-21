@@ -189,7 +189,7 @@ export function fuzzyTextFilterFn(rows, id, filterValue) {
     
     const sd = filterValues[0] ? new Date(filterValues[0]) : undefined;
     const ed = filterValues[1] ? new Date(filterValues[1]) : undefined;
-    sd.setHours(sd.getHours() + 6)
+    if(sd!= undefined) sd.setHours(sd.getHours() + 6)
     //(ed != undefined) ? ed.setHours(ed.getHours() + 5) : undefined;
     //ed.setHours(ed.getHours() + 5)
     console.log('PREVIOS ed: ',ed, 'sd: ',sd)

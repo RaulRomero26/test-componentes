@@ -51,6 +51,11 @@ export const TableConstructor = ({lugar, datos}) => {
                   filter: 'equals',
                 },
                 {
+                  Header:'Faltas Delitos',
+                  accessor:'Faltas_Delitos_Detenido',
+                  filter: 'fuzzyText',
+                },
+                {
                   Header:'Nombre',
                   accessor:'Nombre',
                   filter: 'fuzzyText',
