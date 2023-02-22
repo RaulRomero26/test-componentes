@@ -118,7 +118,7 @@ export function Table({ columns, data }) {
          </div>
          <div className="outer-wrapper shadow">
             <div className='table-wrapper'>
-                <table {...getTableProps()} className="table table-bordered table-hover me-3 shadow" >
+                <table {...getTableProps()} className="table table-bordered table-hover shadow" >
                     <thead>
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
