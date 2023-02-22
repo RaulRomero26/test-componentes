@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-//import './index.css'
-import { TableDecider } from './TableDecider'
+import './index.css'
+// import { TableDecider } from './TableDecider'
 import { SelectBaseComponent } from './SelectBaseComponent'
 //import WebcamCapture from './WebcamCapture'
 
@@ -11,7 +11,9 @@ import { SelectBaseComponent } from './SelectBaseComponent'
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
     <> 
-      <SelectBaseComponent  base={'Sarai Remisiones'} />
+      <div className="contenedor-select-base shadow">
+        <SelectBaseComponent  base={'Sarai Remisiones'} />
+      </div>
       {/* <TableDecider lugar={'datospersonales'}/>
       <TableDecider lugar={'datospersonales'}/> */}
     </>

@@ -241,7 +241,7 @@ export function fuzzyTextFilterFn(rows, id, filterValue) {
   
     return (
       <div>
-        <input
+        <input  className="form-control"
           min={min.toISOString().slice(0, 10)}
           onChange={(e) => {
             const val = e.target.value;
@@ -253,8 +253,8 @@ export function fuzzyTextFilterFn(rows, id, filterValue) {
           type="date"
           value={filterValue[0] || ""}
         />
-        {" to "}
-        <input
+        {" hasta "}
+        <input  className="form-control"
           max={max.toISOString().slice(0, 10)}
           onChange={(e) => {
             const val = e.target.value;

@@ -18,7 +18,7 @@ export const SelectBaseComponent = ({base}) => {
                 <div className="container">
                     <div className="row mt-5 mb-5">
                         <div className="col-md-12">
-                            <h3>Seleccione el tipo de información a buscar de {base}:</h3>
+                            <h3 className="mt-4">Seleccione el tipo de información a buscar de {base}:</h3>
                         </div>
                         <div className="col-md-12">
                             <select className="form-select" aria-label="Default select example"

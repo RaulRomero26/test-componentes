@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bootstrap-icons": "^1.10.3",
     "face-api.js": "^0.22.2",
     "match-sorter": "^6.3.1",
     "node-cron": "^3.0.2",
