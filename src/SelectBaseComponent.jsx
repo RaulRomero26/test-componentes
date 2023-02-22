@@ -25,8 +25,9 @@ export const SelectBaseComponent = ({base}) => {
                                 onChange={handleChange}
                             >
                                 <option value="0">Seleccione una Opción</option>
-                                <option value="datospersonales">Detenido: Datos Personales</option>
-                                <option value="detenidomediafiliacion">Detenido: Media Filiacion</option>
+                                <option value="Detenido: Datos Personales">Detenido: Datos Personales</option>
+                                <option value="Detenido: Media Filiacion">Detenido: Media Filiacion</option>
+                                <option value="Detenido: Contactos">Detenido: Contactos</option>
                             </select>
                         </div>
                     </div>

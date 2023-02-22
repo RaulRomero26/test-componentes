@@ -154,71 +154,74 @@ export function Table({ columns, data }) {
                 </table>
             </div>
          </div>
+        <div className="container">
 
-        <div className="pagination row">
-            <div className="col-md-2">
-                <button className="btn btn-outline-primary" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                {'<<'}
-                </button>{' '}
-                <button className="btn btn-outline-primary" onClick={() => previousPage()} disabled={!canPreviousPage}>
-                {'<'}
-                </button>{' '}
-                <button className="btn btn-outline-primary" onClick={() => nextPage()} disabled={!canNextPage}>
-                {'>'}
-                </button>{' '}
-                <button className="btn btn-outline-primary" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                {'>>'}
-                </button>{' '}
-            </div>
-            <div className="col-md-2">
-                <span>
-                Página {' '}
-                <strong>
-                    {pageIndex + 1} de {pageOptions.length}
-                </strong>{' '}
-                </span>
-            </div>
-            <div className="col-md-2">
-                <span>
-                | Ir a la Página:{' '}
-                <input
+            <div className="row">
+                <div className="col-md-2">
+                    <button className="btn btn-outline-primary" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                    {'<<'}
+                    </button>{' '}
+                    <button className="btn btn-outline-primary" onClick={() => previousPage()} disabled={!canPreviousPage}>
+                    {'<'}
+                    </button>{' '}
+                    <button className="btn btn-outline-primary" onClick={() => nextPage()} disabled={!canNextPage}>
+                    {'>'}
+                    </button>{' '}
+                    <button className="btn btn-outline-primary" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+                    {'>>'}
+                    </button>{' '}
+                </div>
+                <div className="col-md-2">
+                    <span>
+                    Página {' '}
+                    <strong>
+                        {pageIndex + 1} de {pageOptions.length}
+                    </strong>{' '}
+                    </span>
+                </div>
+                <div className="col-md-2">
+                    <span>
+                    | Ir a la Página:{' '}
+                    <input
+                        className="form-control input-sm"
+                        type="number"
+                        defaultValue={pageIndex + 1}
+                        onChange={e => {
+                        const page = e.target.value ? Number(e.target.value) - 1 : 0
+                        gotoPage(page)
+                        }}
+                        style={{ width: '100px' }}
+                    />
+                    </span>{' '}
+                </div>
+
+                <div className="col-md-6">
+                    <select
                     className="form-control input-sm"
-                    type="number"
-                    defaultValue={pageIndex + 1}
+                    value={pageSize}
                     onChange={e => {
-                    const page = e.target.value ? Number(e.target.value) - 1 : 0
-                    gotoPage(page)
+                        setPageSize(Number(e.target.value))
                     }}
-                    style={{ width: '100px' }}
-                />
-                </span>{' '}
+                    >
+                    {[10, 20, 30, 40, 50].map(pageSize => (
+                        <option key={pageSize} value={pageSize}>
+                        Mostrar {pageSize}
+                        </option>
+                    ))}
+                    </select>
+                </div>
+                
             </div>
-
-            <div className="col-md-6">
-                <select
-                className="form-control input-sm"
-                value={pageSize}
-                onChange={e => {
-                    setPageSize(Number(e.target.value))
-                }}
-                >
-                {[10, 20, 30, 40, 50].map(pageSize => (
-                    <option key={pageSize} value={pageSize}>
-                    Mostrar {pageSize}
-                    </option>
-                ))}
-                </select>
-            </div>
-            
         </div>
 
         <br />
-        <div>
+        {/* se comenta sive para debugear que filtros se estan aplicando */}
+        {/* <div>
             <pre>
                 <br />
                 <code>{JSON.stringify(state.filters, null, 2)}</code>
             </pre>
-        </div>
+        </div> */}
         </>
     )
 }

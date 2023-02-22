@@ -14,12 +14,16 @@ export const TableDecider = ({lugar}) => {
    
     //llamar la data con un el hook useFetch
     switch (lugar) {
-        case 'datospersonales':
+        case 'Detenido: Datos Personales':
             url = `http://172.18.10.71:9090/api/base/datos-personales-detenidos`;
            
             break;
-        case 'detenidomediafiliacion':
+        case 'Detenido: Media Filiacion':
             url = `http://172.18.10.71:9090/api/base/detenido-media-filiacion`;
+
+            break;
+        case 'Detenido: Contactos':
+            url = `http://172.18.10.71:9090/api/base/detenido-contactos`;
 
             break;
         default:
@@ -32,25 +36,27 @@ export const TableDecider = ({lugar}) => {
     console.log({dataR,isLoading,hasError});
     return (
         <>  
-            <div className="container">
-    
-                <div className="row">
-                    <div className="col-md-12">
-                        <h3>Tabla de {lugar}</h3>
-                        <hr />
+            <div className="container-fluid">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h3>Tabla de {lugar}</h3>
+                            <hr />
+                        </div>
                     </div>
                 </div>
-    
-                <div className="row">
-                    <div className="col-md-12">
-    
-                    {
-                        (!isLoading) && <TableConstructor lugar={lugar} datos={dataR.data}/>
-                    }
-                        
+
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-12">
+        
+                        {
+                            (!isLoading) && <TableConstructor lugar={lugar} datos={dataR.data}/>
+                        }
+                            
+                        </div>
                     </div>
                 </div>
-    
             </div>
             
         </>

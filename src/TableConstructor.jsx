@@ -25,7 +25,7 @@ export const TableConstructor = ({lugar, datos}) => {
     let columns,data;
 
     switch (lugar) {
-      case 'datospersonales':
+      case 'Detenido: Datos Personales':
         columns = React.useMemo(
           () => [
                 {
@@ -136,7 +136,7 @@ export const TableConstructor = ({lugar, datos}) => {
           <Table columns={columns} data={data} />
         )
 
-      case 'detenidomediafiliacion':
+      case 'Detenido: Media Filiacion':
           columns = React.useMemo(
             () => [
     
@@ -356,6 +356,118 @@ export const TableConstructor = ({lugar, datos}) => {
             <Table columns={columns} data={data} />
           )
       
+      case 'Detenido: Contactos':
+        columns = React.useMemo(
+          () => [
+                {
+                  Header:'Fecha',
+                  accessor:'Fecha_Hora',
+                  Filter: DateRangeColumnFilter,
+                  filter: dateBetweenFilterFn
+                },
+                {
+                  Header:'Ficha',
+                  accessor:'Ficha',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Num. Remisión',
+                  accessor:'No_Remision',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Status Remisión',
+                  accessor:'Status_Remision',
+                  Filter: SelectColumnFilter,
+                  filter: 'equals',
+                },
+                {
+                  Header:'Faltas Delitos',
+                  accessor:'Faltas_Delitos_Detenido',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Nombre Detenido',
+                  accessor:'Nombre_Detenido',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Ap Paterno Detenido',
+                  accessor:'Ap_Paterno_Detenido',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Ap Materno Detenido',
+                  accessor:'Ap_Materno_Detenido',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Género Detenido',
+                  accessor:'Genero_Detenido',
+                  Filter: SelectColumnFilter,
+                  filter: 'equals',
+                },
+                {
+                  Header: 'Edad Detenido De: ',
+                  accessor: 'Edad_Detenido',
+                  Filter: NumberRangeColumnFilter,
+                  filter: 'between',
+                },
+                {
+                  Header:'Télefono Detenido',
+                  accessor:'Telefono_Detenido',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Nombre Contacto',
+                  accessor:'Nombre_Contacto',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Ap Paterno Contacto',
+                  accessor:'Ap_Paterno_Contacto',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Ap Materno Contacto',
+                  accessor:'Ap_Materno_Contacto',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header:'Parentesco',
+                  accessor:'Parentesco',
+                  Filter: SelectColumnFilter,
+                  filter: 'equals',
+                },
+                {
+                  Header:'Télefono Contacto',
+                  accessor:'Telefono_Contacto',
+                  filter: 'fuzzyText',
+                },
+                {
+                  Header: 'Edad Contacto De: ',
+                  accessor: 'Edad_Contacto',
+                  Filter: NumberRangeColumnFilter,
+                  filter: 'between',
+                },
+                {
+                  Header:'Género Contacto',
+                  accessor:'Genero_Contacto',
+                  Filter: SelectColumnFilter,
+                  filter: 'equals',
+                }
+                
+          ],[]
+        )
+
+        data = React.useMemo(() =>
+        datos.Remisiones
+        , [])
+        
+        
+        return (
+          <Table columns={columns} data={data} />
+        )
     
       default:
         break;
