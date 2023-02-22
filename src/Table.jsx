@@ -120,6 +120,20 @@ export function Table({ columns, data }) {
             <div className='table-wrapper'>
                 <table {...getTableProps()} className="table table-bordered table-hover shadow" >
                     <thead>
+                        <tr>
+                            <th
+                            colSpan={visibleColumns.length}
+                            style={{
+                                textAlign: 'left',
+                            }}
+                            >
+                            <GlobalFilter
+                                preGlobalFilteredRows={preGlobalFilteredRows}
+                                globalFilter={state.globalFilter}
+                                setGlobalFilter={setGlobalFilter}
+                            />
+                            </th>
+                        </tr>
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map(column => (
@@ -131,20 +145,7 @@ export function Table({ columns, data }) {
                         ))}
                         </tr>
                     ))}
-                    <tr>
-                        <th
-                        colSpan={visibleColumns.length}
-                        style={{
-                            textAlign: 'left',
-                        }}
-                        >
-                        <GlobalFilter
-                            preGlobalFilteredRows={preGlobalFilteredRows}
-                            globalFilter={state.globalFilter}
-                            setGlobalFilter={setGlobalFilter}
-                        />
-                        </th>
-                    </tr>
+                    
                     </thead>
                     <tbody {...getTableBodyProps()}>
                     {page.map((row, i) => {

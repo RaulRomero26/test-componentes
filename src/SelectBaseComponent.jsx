@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { TableDecider } from './TableDecider';
-
+import { TableHolder } from './TableHolder';
+ 
 export const SelectBaseComponent = ({base}) => {
 
-    const [baseSelect, setBaseSelect] = useState()
+    const [baseSelect, setBaseSelect] = useState(' ')
 
     const handleChange = (event) => {
         console.log(event.target.value)
@@ -24,7 +25,7 @@ export const SelectBaseComponent = ({base}) => {
                             <select className="form-select" aria-label="Default select example"
                                 onChange={handleChange}
                             >
-                                <option value="0">Seleccione una Opción</option>
+                                <option value=" " selected>Seleccione una Opción</option>
                                 <option value="Detenido: Datos Personales">Detenido: Datos Personales</option>
                                 <option value="Detenido: Media Filiacion">Detenido: Media Filiacion</option>
                                 <option value="Detenido: Contactos">Detenido: Contactos</option>
@@ -34,7 +35,9 @@ export const SelectBaseComponent = ({base}) => {
                 </div>
 
                 {
-                ( baseSelect != "0" ) && <TableDecider lugar={baseSelect}/>
+                    ( baseSelect != " " ) 
+                        ? <TableDecider lugar={baseSelect}/>
+                        : <TableHolder />
                 }
             </>
             

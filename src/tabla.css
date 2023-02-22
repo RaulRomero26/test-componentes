@@ -26,13 +26,13 @@
     height: fit-content;
     /* margin: 15px;
     margin-top: 22px; */
-    padding-bottom: 5px;
+    /* //padding-bottom: 5px; */
     
 }
 
 table>thead>tr>th{
 
-    min-width: 100px !important;
+    min-width: 130px !important;
     background-color: var(--icon-color) !important;
     color: #fff;
     font-weight: 500;

@@ -40,8 +40,8 @@ export const TableDecider = ({lugar}) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h3>Tabla de {lugar}</h3>
-                            <hr />
+                            <h3 className='text-center titulo'>Tabla de {lugar}</h3>
+                            <hr className='decorator'/>
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ export function GlobalFilter({
   
     return (
       <span>
-        Search:{' '}
+        Búsqueda General:{' '}
         <input
           className="form-control"
           value={value || ""}
@@ -77,7 +77,7 @@ export function SelectColumnFilter({
           setFilter(e.target.value || undefined)
         }}
       >
-        <option value="">All</option>
+        <option value="">TODOS</option>
         {options.map((option, i) => (
           <option key={i} value={option}>
             {option}
