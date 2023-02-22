@@ -17,7 +17,7 @@ export function GlobalFilter({
   
     return (
       <span>
-        Búsqueda General:{' '}
+        BÚSQUEDA GENERAL:{' '}
         <input
           className="form-control"
           value={value || ""}
@@ -25,7 +25,7 @@ export function GlobalFilter({
             setValue(e.target.value);
             onChange(e.target.value);
           }}
-          placeholder={`${count} registros...`}
+          placeholder={`${count} REGISTROS...`}
           style={{
             fontSize: '1.1rem',
             border: '0',
@@ -48,7 +48,7 @@ export function DefaultColumnFilter({
         onChange={e => {
           setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
         }}
-        placeholder={`Buscar ${count} registros`}
+        placeholder={`BUSCAR ${count} REGISTROS`}
       />
     )
   }
@@ -253,7 +253,7 @@ export function fuzzyTextFilterFn(rows, id, filterValue) {
           type="date"
           value={filterValue[0] || ""}
         />
-        {" hasta "}
+        {" HASTA "}
         <input  className="form-control"
           max={max.toISOString().slice(0, 10)}
           onChange={(e) => {

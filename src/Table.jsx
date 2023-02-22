@@ -137,7 +137,7 @@ export function Table({ columns, data }) {
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map(column => (
-                            <th {...column.getHeaderProps()}>
+                            <th  className="align-middle"{...column.getHeaderProps()}>
                             {column.render('Header')}
                             {/* Render the columns filter UI */}
                             <div>{column.canFilter ? column.render('Filter') : null}</div>

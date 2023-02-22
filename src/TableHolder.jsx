@@ -5,7 +5,7 @@ export const TableHolder = () => {
     <div className="container">
         <div className="row">
             <div className="col">
-                <div class="alert alert-info" role="alert">
+                <div className="alert alert-info" role="alert">
                     Debe de seleccionar una opción primero.
                 </div>
             </div>

@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
     <> 
       <div className="contenedor-select-base shadow">
-        <SelectBaseComponent  base={'Sarai Remisiones'} />
+        <SelectBaseComponent  base={'SARAI REMISIONES'} />
       </div>
       {/* <TableDecider lugar={'datospersonales'}/>
       <TableDecider lugar={'datospersonales'}/> */}

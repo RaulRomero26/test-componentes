@@ -12,23 +12,23 @@ export const SelectBaseComponent = ({base}) => {
       };
 
     switch (base) {
-        case 'Sarai Remisiones':
+        case 'SARAI REMISIONES':
        
         return (
             <>
                 <div className="container">
                     <div className="row mt-5 mb-5">
                         <div className="col-md-12">
-                            <h3 className="mt-4">Seleccione el tipo de información a buscar de {base}:</h3>
+                            <h3 className="mt-4">SELECCIONE EL TIPO DE INFORMACIÓN A BUSCAR DE {base}:</h3>
                         </div>
                         <div className="col-md-12">
                             <select className="form-select" aria-label="Default select example"
                                 onChange={handleChange}
                             >
-                                <option value=" " selected>Seleccione una Opción</option>
-                                <option value="Detenido: Datos Personales">Detenido: Datos Personales</option>
-                                <option value="Detenido: Media Filiacion">Detenido: Media Filiacion</option>
-                                <option value="Detenido: Contactos">Detenido: Contactos</option>
+                                <option value=" ">SELECCIONE UNA OPCIÓN</option>
+                                <option value="Detenido: Datos Personales">DETENIDO: DATOS PERSONALES</option>
+                                <option value="Detenido: Media Filiacion">DETENIDO: MEDIA FILIACION</option>
+                                <option value="Detenido: Contactos">DETENIDO: CONTACTOS</option>
                             </select>
                         </div>
                     </div>

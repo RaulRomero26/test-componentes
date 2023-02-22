@@ -56,3 +56,7 @@ body{
 .decorator{
   border: 2px solid var(--h-color);
 }
+
+input {
+  text-transform: uppercase;
+}

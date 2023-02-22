@@ -40,7 +40,7 @@ export const TableDecider = ({lugar}) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h3 className='text-center titulo'>Tabla de {lugar}</h3>
+                            <h3 className='text-center titulo'>TABLA DE {`${lugar}`.toUpperCase()}</h3>
                             <hr className='decorator'/>
                         </div>
                     </div>
