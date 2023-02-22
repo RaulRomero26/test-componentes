@@ -190,29 +190,20 @@ export function fuzzyTextFilterFn(rows, id, filterValue) {
     const sd = filterValues[0] ? new Date(filterValues[0]) : undefined;
     const ed = filterValues[1] ? new Date(filterValues[1]) : undefined;
     if(sd!= undefined) sd.setHours(sd.getHours() + 6)
-    //(ed != undefined) ? ed.setHours(ed.getHours() + 5) : undefined;
-    //ed.setHours(ed.getHours() + 5)
-    console.log('PREVIOS ed: ',ed, 'sd: ',sd)
 
     if (ed || sd) {
 
       return rows.filter((r) => {
         // format data
         var dateAndHour = r.values[id].split(" ");
-        //console.log('dateadnhour',dateAndHour)
         var [year, month, day] = dateAndHour[0].split("-");
         var date = [year, month, day].join("-");
         var hour = dateAndHour[1];
         var formattedData = date + " " + hour;
   
         const cellDate = new Date(formattedData);
-        //console.log('dateadnhour',dateAndHour, 'cellDate', cellDate)
-
-        //console.log('ed: ',ed, 'sd: ',sd)
   
         if (ed && sd) {
-          //sd.setHours(sd.getHours() + 6)
-          //ed.setHours(ed.getHours() + 6)
           return cellDate >= sd && cellDate <= ed;
         } else if (sd) {
           //sd.setHours(sd.getHours() + 6)
