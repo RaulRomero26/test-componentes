@@ -36,6 +36,7 @@ table>thead>tr>th{
     background-color: var(--icon-color) !important;
     color: #fff;
     font-weight: 500;
+    font-size: 1.2rem;
 }
 
 .btn-export-csv{
