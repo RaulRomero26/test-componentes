@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import './index.css'
 // import { TableDecider } from './TableDecider'
-import { SelectBaseComponent } from './SelectBaseComponent'
+import { SelectBaseComponent } from './components'
 //import WebcamCapture from './WebcamCapture'
 
 

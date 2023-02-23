@@ -2,7 +2,7 @@
 
 import { useEffect, useState,useCallback } from 'react';
 //hooks
-import { useFetch } from './hooks/useFetch';
+import { useFetch } from '../../hooks';
 //import { TableConFiltro } from './TableConFiltro';
 import { TableConstructor } from './TableConstructor';
 //bliotecas y/o componentes de terceros

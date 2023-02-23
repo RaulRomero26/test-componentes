@@ -3,7 +3,7 @@ import React from 'react'
 import { Table } from './Table';
 
 import "babel-polyfill";
-import { GlobalFilter, DefaultColumnFilter, SelectColumnFilter, SliderColumnFilter, NumberRangeColumnFilter, fuzzyTextFilterFn,DateRangeColumnFilter, dateBetweenFilterFn } from './helpers/filters'
+import { GlobalFilter, DefaultColumnFilter, SelectColumnFilter, SliderColumnFilter, NumberRangeColumnFilter, fuzzyTextFilterFn,DateRangeColumnFilter, dateBetweenFilterFn } from '../../helpers'
 
     // Define a custom filter filter function!
   function filterGreaterThan(rows, id, filterValue) {
