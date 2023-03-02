@@ -23,7 +23,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 {/* 
        <ImageZW/>  */}
       {/* <ImageCaption/> */}
-      <Picture/>
+      {/* <Picture/> */}
+      <div className="row">
+        <div className="col-md-4">
+          <Picture/>
+        </div>  
+      </div>
     </>
 
   //</React.StrictMode>,

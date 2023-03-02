@@ -34,6 +34,7 @@
     line-height: 3em;
     letter-spacing: 2px;
     color: #fff;
+    user-select: none;
   }
 
   .zoom-caption--loaded{
@@ -49,9 +50,5 @@
     line-height: 3em;
     letter-spacing: 2px;
     color: #fff;
-  }
-
-  .card-image-top{
-    width: 80% !important;
-    height: 50%;
+    user-select: none;
   }
