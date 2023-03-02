@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ImageCaption } from './components/ImageZW/imageCaption'
+import { ImageZoom } from './components/ImageZW/ImageZoom'
 import { ImageZW } from './components/ImageZW/ImageZW'
 import { Picture } from './components/ImageZW/Picture'
 
@@ -26,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* <Picture/> */}
       <div className="row">
         <div className="col-md-4">
-          <Picture/>
+          <ImageZoom url={'http://172.18.0.25/sarai/public/files/Remisiones/21641/FotosHuellas/266182/rostro_frente.jpeg'} width={'1000'} height={'700'}/>
         </div>  
       </div>
     </>
