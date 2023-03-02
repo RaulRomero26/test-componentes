@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback,useLayoutEffect } from 'react'
-import Zoom from 'react-medium-image-zoom'
 import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
+import '../../assets/css/ImageZW/imagen.css'
 
 
 
@@ -49,15 +49,12 @@ export const Picture = () => {
     const [isZoomed, setIsZoomed] = useState(false)
   
     const handleZoomChange = useCallback(shouldZoom => {
-      console.log(document.querySelectorAll('[data-rmiz-modal-content]'))
       setIsZoomed(shouldZoom)
     }, [])
   
   
     useEffect(() => {
       const imgContainerSelector = imgContainerRef.current.querySelector(".watermarked");
-      console.log(imgContainerSelector)
-      console.log("watermark ", watermark);
   
       if (watermark) {
         imgContainerSelector.dataset.watermark = (
@@ -72,7 +69,7 @@ export const Picture = () => {
   
   
     return (
-        <div >
+        <>
             <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange} ZoomContent={CustomZoomContent}>
                 <div className="card" style={{width: '25rem'}} ref={imgContainerRef}>
                         <div
@@ -99,6 +96,6 @@ export const Picture = () => {
                 </div>
             </ControlledZoom>
 
-        </div>
+        </>
     )
   }
