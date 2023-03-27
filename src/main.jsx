@@ -9,6 +9,7 @@ import { Picture } from './components/ImageZW/Picture'
 import './index.css'
 //import { TableDecider } from './TableDecider'
 import { SelectBaseComponent } from './components' // este es el import del componente
+import { CheckBoxSelector } from './components/CheckBoxSelector/CheckBoxSelector'
 //import WebcamCapture from './WebcamCapture' 
 
 
@@ -16,6 +17,9 @@ import { SelectBaseComponent } from './components' // este es el import del comp
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
     <> 
+      {/* <div className="">
+        <CheckBoxSelector/>
+      </div> */}
       <div className="contenedor-select-base shadow">
         <SelectBaseComponent  base={'SARAI REMISIONES'} /> 
       </div>
