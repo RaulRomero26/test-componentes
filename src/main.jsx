@@ -10,6 +10,7 @@ import './index.css'
 //import { TableDecider } from './TableDecider'
 import { SelectBaseComponent } from './components' // este es el import del componente
 import { CheckBoxSelector } from './components/CheckBoxSelector/CheckBoxSelector'
+import { BaseMultiplier } from './components/BaseMultiplier/BaseMultiplier'
 //import WebcamCapture from './WebcamCapture' 
 
 
@@ -20,9 +21,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* <div className="">
         <CheckBoxSelector/>
       </div> */}
-      <div className="contenedor-select-base shadow">
-        <SelectBaseComponent  base={'SARAI REMISIONES'} /> 
+      <div className="row mb-4">
+        <div className="col">
+          <BaseMultiplier/>
+        </div>
       </div>
+      {/* <div className="contenedor-select-base shadow">
+        <SelectBaseComponent  base={'SARAI REMISIONES'} /> 
+      </div> */}
       {/* <TableDecider lugar={'datospersonales'}/>
       <TableDecider lugar={'datospersonales'}/> */}
 {/* 
