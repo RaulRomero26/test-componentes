@@ -83,9 +83,9 @@ const MyDoc = () => (
 export const MyPdf = () => {
   return (
     <div className="App">
-      {/* <PDFDownloadLink document={<MyDoc />} fileName="somename.pdf">
+      <PDFDownloadLink document={<MyDoc />} fileName="somename.pdf">
       {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
-    </PDFDownloadLink> */}
+    </PDFDownloadLink> 
    
     </div>
   );

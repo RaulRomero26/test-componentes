@@ -12,6 +12,7 @@ import { SelectBaseComponent } from './components' // este es el import del comp
 import { CheckBoxSelector } from './components/CheckBoxSelector/CheckBoxSelector'
 import { BaseMultiplier } from './components/BaseMultiplier/BaseMultiplier'
 import { MyPdf } from './components/PDF/MyPdf'
+import { MyPopover } from './components/Popover/MyPopover'
 //import WebcamCapture from './WebcamCapture' 
 
 
@@ -25,7 +26,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <div className="row mb-4">
         <div className="col">
           {/* <BaseMultiplier/> */}
-          <MyPdf/>
+          {/* <MyPdf/> */}
+          <MyPopover/>
         </div>
       </div>
       {/* <div className="contenedor-select-base shadow">
