@@ -13,6 +13,10 @@ import { CheckBoxSelector } from './components/CheckBoxSelector/CheckBoxSelector
 import { BaseMultiplier } from './components/BaseMultiplier/BaseMultiplier'
 import { MyPdf } from './components/PDF/MyPdf'
 import { MyPopover } from './components/Popover/MyPopover'
+import { MyChart } from './components/Chart/MyChart'
+import { Mapa } from './components/Mapas'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { Lector } from './components/xlsx/Lector'
 //import WebcamCapture from './WebcamCapture' 
 
 
@@ -23,13 +27,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* <div className="">
         <CheckBoxSelector/>
       </div> */}
-      <div className="row mb-4">
+      {/* <div className="row mb-4">
         <div className="col">
           {/* <BaseMultiplier/> */}
-          {/* <MyPdf/> */}
-          <MyPopover/>
-        </div>
-      </div>
+           {/* <MyPdf/>  */}
+            {/* <MyChart/>*/}
+          {/* </div>
+      </div> */}
       {/* <div className="contenedor-select-base shadow">
         <SelectBaseComponent  base={'SARAI REMISIONES'} /> 
       </div> */}
@@ -44,7 +48,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <ImageZoom url={'http://172.18.0.25/sarai/public/files/Remisiones/21641/FotosHuellas/266182/rostro_frente.jpeg'} width={'1000'} height={'700'}/>
         </div>  
       </div> */}
+      {/* <Mapa/> */}
+      <Lector/>
     </>
 
   //</React.StrictMode>,
+
+  
 )

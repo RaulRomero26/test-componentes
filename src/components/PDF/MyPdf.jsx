@@ -52,22 +52,25 @@ const MyDoc = () => (
   <Document>
     <Page style={styles.body} orientation="landscape">
        <Text >
-      	Titulo
+      	Ficha de identificacion
       	</Text>
       
         <View style={[styles.row]}>
         	<View  style={styles.left}>
           		<Image
         			style={styles.image}
-        			src={{ uri:'http://172.18.0.25/sarai/public/files/Remisiones/19863/FotosHuellas/264019/rostro_frente.jpeg', method: "GET", headers: { "Cache-Control": "no-cache" }, body: "" }} 
+        			src={{ uri:'http://172.18.0.25/sarai/public/files/Remisiones/19863/FotosHuellas/264019/rostro_frente.jpeg', method: "GET"}} 
       			/>
         	</View>
         	<View debug style={styles.right}>
+              <Text>
+                DATOS DE LA REMISIÓN
+              </Text>
           		<Text>
-            	datos
+            	  FICHA: REMISION: ZONA: VECTOR: STATUS REMISION: REMITIDIO A:
           		</Text>
-              	<Text>
-            	nombre
+              <Text>
+            	  DATOS DEL DETENIDO: 
           		</Text>
         	</View>
       	</View>
